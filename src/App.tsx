@@ -1,6 +1,5 @@
+import React from 'react';
 
-export default function App() {
-  return (
-    <h1>Holla mundo</h1>
-  )
+export default function App(): JSX.Element {
+	return <h1>Holla mundo</h1>;
 }
