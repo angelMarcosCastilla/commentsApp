@@ -55,7 +55,7 @@ body{
 .coments-card__headerDetails{
 	display: flex;
 	align-items: center;
-	gap: 1rem;
+	gap: .8rem;
 	justify-content: space-between;
 }
 .comments-card__body{
@@ -86,4 +86,25 @@ body{
 	font-size: 14px;
 	color: var(--primary-color);
 	font-weight: 500;
+}
+
+/* Components : Avatar */
+.avatar{
+	border-radius: 50%;
+	overflow: hidden;
+	object-fit: cover;
+}
+
+.avatar__small{
+	width: 30px;
+	height: 30px;
+}
+.avatar__medium{
+	width: 50px;
+	height: 50px;
+}
+
+.avatar__large{
+	width: 100px;
+	height: 100px;
 }
