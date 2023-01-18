@@ -1,5 +1,6 @@
 import React from 'react';
+import ContainerComments from './components/ContainerComments';
 import './styles.css';
 export default function App(): JSX.Element {
-	return <h1>Holla mundo</h1>;
+	return <ContainerComments></ContainerComments>;
 }
