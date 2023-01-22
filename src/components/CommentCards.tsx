@@ -1,6 +1,7 @@
 import React from 'react';
 import { Comment } from '../types/comments';
 import Avatar from './Avatar';
+import Button from './Button';
 import Score from './Score';
 import TimeStamp from './TimeStamp';
 
@@ -21,7 +22,11 @@ const CommentCards: React.FC<Props> = ({ comment }) => {
 						<h3>{comment.user.userName}</h3>
 						<TimeStamp timestamp={comment.timestamp}></TimeStamp>
 					</div>
-					<div className='coments-card__actions'>reply</div>
+					<div className='coments-card__actions'>
+						<Button variant='text'>
+							<img src='./icon-reply.svg' alt='icon reply' /> Reply
+						</Button>
+					</div>
 				</header>
 				<div className='comments-card__body'>
 					<p>{comment.comments}</p>
