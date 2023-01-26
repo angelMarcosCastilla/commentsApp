@@ -37,4 +37,4 @@ const Modal: React.FC<ModalProps> = ({ title, content,config }) => {
 	);
 };
 
-export default WithPortal(Modal, 'modal');
+export default WithPortal(Modal as any, 'modal');
