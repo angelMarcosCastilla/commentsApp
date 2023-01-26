@@ -27,9 +27,9 @@ const Button: React.FC<Props> = ({ children, variant = 'primary', color = 'prima
 
 	const className = `btn btn__${variant}`;
 	const btnColor = useMemo(() => getVariableCss(color), [color]);
-	
+
 	return (
-		<button style={{ '--color': btnColor }} className={className} disabled={isDisabled} {...rest}>
+		<button style={{ ['--color' as string]: btnColor }} className={className} disabled={isDisabled} {...rest}>
 			{children}
 		</button>
 	);

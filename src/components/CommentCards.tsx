@@ -2,6 +2,7 @@ import React from 'react';
 import { Comment } from '../types/comments';
 import Avatar from './Avatar';
 import Button from './Button';
+import ReplyEditor from './Editor/ReplyEditor';
 import Score from './Score';
 import TimeStamp from './TimeStamp';
 
@@ -11,6 +12,7 @@ interface Props {
 
 const CommentCards: React.FC<Props> = ({ comment }) => {
 	return (
+		<>
 		<article className='comments-card'>
 			<div className='comments-card__aside'>
 				<Score initialScore={comment.score}></Score>
@@ -33,6 +35,8 @@ const CommentCards: React.FC<Props> = ({ comment }) => {
 				</div>
 			</div>
 		</article>
+		<ReplyEditor/>
+		</>
 	);
 };
 

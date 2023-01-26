@@ -8,7 +8,7 @@ const ReplyEditor:React.FC = () => {
     <div className='editorContainer'>
       <Avatar src='https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light' name=''></Avatar>
   <TextArea></TextArea>
-  <Button size='large'>Reply</Button>
+  <Button  size='large'>Reply</Button>
     </div>
   )
 }
