@@ -138,3 +138,16 @@ body{
 	background-color: var(--white);
 	border: 1px solid var(--primary-color);
 }
+
+/*component Text Area*/
+.textarea{
+	width: 100%;
+	padding: 1rem;
+	border-radius: 8px;
+	border: 2px solid var(--light-grayish-blue);
+	font-size: 1rem;
+	font-family: var(--font-family);
+	color: var(--grayish-blue);
+	outline: none;
+	resize: none;
+}
