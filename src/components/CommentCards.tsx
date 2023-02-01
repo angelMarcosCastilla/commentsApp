@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { CommentsWithChildren as Comment } from '../types/comments';
 import Avatar from './Avatar';
 import Button from './Button';
-import ReplyEditor from './Editor/ReplyEditor';
 import Score from './Score';
 import TimeStamp from './TimeStamp';
 
@@ -10,7 +9,7 @@ interface Props {
 	comment: Comment;
 }
 
-const CommentCards: React.FC<Props> = ({ comment }) => {
+const CommentCards: React.FC<Props> = (({ comment }) => {
 	return (
 		<>
 			<article className='comments-card'>
@@ -44,6 +43,6 @@ const CommentCards: React.FC<Props> = ({ comment }) => {
 			</div>
 		</>
 	);
-};
+})
 
-export default CommentCards;
+export default memo(CommentCards);
