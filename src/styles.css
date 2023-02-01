@@ -87,7 +87,23 @@ body {
 	color: var(--primary-color);
 	font-weight: 500;
 }
-
+.commentLine{
+	--left-width : 15px;
+	margin: 0.5rem 0;
+	margin-left: calc(var(--left-width) * 2);
+	position: relative;
+}
+.commentLine::after{
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 100%;
+	background-color: var(--grayish-blue);
+	left:-20px;
+	top: -10px;
+	opacity: .1;
+	border-radius: 5px;
+}
 /* Components : Avatar */
 .avatar {
 	border-radius: 50%;
