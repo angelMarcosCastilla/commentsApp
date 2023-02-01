@@ -1,7 +1,7 @@
 import { commentsApp } from '../json/commentsdb';
-import { CommentsWithChildren, Comment } from '../types/comments';
+import {  Comment } from '../types/comments';
 
-export const getComments = async (): Promise<CommentsWithChildren[]> => {
+export const getComments = async (): Promise<Comment[]> => {
 	return await new Promise(resolve =>
 		setTimeout(() => {
 			resolve(commentsApp);
@@ -9,11 +9,9 @@ export const getComments = async (): Promise<CommentsWithChildren[]> => {
 	);
 };
 
-
 export const addComment = async (comment: Comment ): Promise<Comment> => {
 	return await new Promise(resolve =>
 		setTimeout(() => {
-			commentsApp.push(comment);
 			resolve(comment);
 		}, 3000),
 	);
