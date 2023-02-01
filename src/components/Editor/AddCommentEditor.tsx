@@ -5,13 +5,14 @@ import TextArea from '../TextArea';
 
 interface Props {
 	handleSubmit: (commentText: string, resetValue: Function) => void;
+	loading?: boolean;
 }
-export const AddCommentEditor: React.FC<Props> = ({ handleSubmit }) => {
+export const AddCommentEditor: React.FC<Props> = ({ handleSubmit, loading }) => {
 	const [value, setValue] = useState<string>('');
 
 	const resetValue = (): void => {
 		setValue('');
-	}
+	};
 
 	return (
 		<div className='editorContainer'>
@@ -26,12 +27,13 @@ export const AddCommentEditor: React.FC<Props> = ({ handleSubmit }) => {
 				}}
 			></TextArea>
 			<Button
+				disabled={value.length === 0 || loading === true}
 				size='large'
 				onClick={() => {
 					handleSubmit(value, resetValue);
 				}}
 			>
-				Send
+				{loading === true ? 'Loading...' : 'Add Comment'}
 			</Button>
 		</div>
 	);
