@@ -9,4 +9,9 @@ export interface Comment {
   timestamp: string;
   comments: string;
   score: number;
+  parentId?: number | null;
+}
+
+export interface CommentsWithChildren extends Comment {
+  children?: Comment[];
 }

@@ -5,14 +5,14 @@ import './styles.css';
 export default function App(): JSX.Element {
 	return (
 		<>
-			<Modal
+			{/* <Modal
 				title='pruenasa'
 				content='lorem asjbdahgfdj fsgas fasg fahg fasg fjhasg '
 				config={{
 					textCancel: 'No, Cancel',
 					textConfirm: 'Yes, Delete',
 				}}
-			></Modal>
+			></Modal> */}
 			<ContainerComments></ContainerComments>;
 		</>
 	);

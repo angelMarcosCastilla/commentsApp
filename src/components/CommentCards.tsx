@@ -35,7 +35,7 @@ const CommentCards: React.FC<Props> = ({ comment }) => {
 				</div>
 			</div>
 		</article>
-		<ReplyEditor/>
+		{/* <ReplyEditor/> */}
 		</>
 	);
 };
