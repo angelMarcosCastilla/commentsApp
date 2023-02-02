@@ -6,8 +6,9 @@ import TextArea from '../TextArea';
 interface Props {
 	handleSubmit: (commentText: string, resetValue: Function) => void;
 	loading?: boolean;
+	textButton?: string;
 }
-export const AddCommentEditor: React.FC<Props> = ({ handleSubmit, loading }) => {
+export const AddCommentEditor: React.FC<Props> = ({ handleSubmit, loading, textButton = "Send" }) => {
 	const [value, setValue] = useState<string>('');
 
 	const resetValue = (): void => {
@@ -33,7 +34,7 @@ export const AddCommentEditor: React.FC<Props> = ({ handleSubmit, loading }) => 
 					handleSubmit(value, resetValue);
 				}}
 			>
-				{loading === true ? 'Loading...' : 'Add Comment'}
+				{loading === true ? 'Loading...' : textButton}
 			</Button>
 		</div>
 	);

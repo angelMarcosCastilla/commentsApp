@@ -1,4 +1,4 @@
-import {  useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import useGetComments from '../hooks/useGetComments';
 import { addComment } from '../services/comments';
 import { Comment, CommentsWithChildren } from '../types/comments';
@@ -8,7 +8,7 @@ import { AddCommentEditor } from './Editor/AddCommentEditor';
 
 export default function ContainerComments(): JSX.Element {
 	const [loading, setLoading] = useState<boolean>(false);
-	const {comments, setComments, loading: loadingComments} = useGetComments();
+	const { comments, setComments, loading: loadingComments } = useGetComments();
 
 	const commentsTree: CommentsWithChildren[] = useMemo(() => {
 		return getParentsCommentUtil(comments);
@@ -38,14 +38,12 @@ export default function ContainerComments(): JSX.Element {
 			})
 			.catch(console.error);
 	};
-	console.log('commentsTree', comments)
+
 	return (
 		<div className='container'>
-			{
-				loadingComments ? <div>Loading...</div> : null
-			}
-			{ commentsTree.map(comment => {
-				return <CommentCards key={comment.id} comment={comment} />;
+			{loadingComments ? <div>Loading...</div> : null}
+			{commentsTree.map(comment => {
+				return <CommentCards key={comment.id} comment={comment} setComments={setComments} />;
 			})}
 
 			<AddCommentEditor handleSubmit={handleSubmit} loading={loading}></AddCommentEditor>

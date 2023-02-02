@@ -188,6 +188,7 @@ body {
 	flex-direction: row;
 	gap: 1rem;
 	align-items: flex-start;
+	margin-bottom: 1rem;
 }
 
 /*Modal*/

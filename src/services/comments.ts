@@ -17,3 +17,12 @@ export const addComment = async (comment: Comment ): Promise<Comment> => {
 	);
 
 };
+
+export const replyComments = async (comment: Comment ): Promise<Comment> => {
+	return await new Promise(resolve =>
+		setTimeout(() => {
+			resolve(comment);
+		}, 3000),
+	);
+
+};
