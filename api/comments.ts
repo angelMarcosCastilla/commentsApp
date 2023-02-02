@@ -1,3 +1,5 @@
-export default async function handler(req, res) {
-  res.status(200).json({ text: 'Hello' })
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+
+export default async function handler(req:VercelRequest, res:VercelResponse) {
+  res.json({ text: 'Hello' })
 }

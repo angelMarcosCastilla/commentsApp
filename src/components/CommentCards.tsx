@@ -34,7 +34,7 @@ const CommentCards: React.FC<Props> = ({ comment, setComments }) => {
 
 		replyComments(newComments)
 			.then(res => {
-				setComments(prevState => [...prevState, res]);
+				setComments((prevState:Comment[]) => [...prevState, res]);
 				setLoading(false);
 				resetValue();
 			})
