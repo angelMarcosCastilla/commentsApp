@@ -61,6 +61,24 @@ body {
 .comments-card__body {
 	max-width: 95%;
 }
+
+.commentChild {
+	position: relative;
+}
+.commentChild::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: -20px;
+	width: 20px;
+	height: 15px;
+	rotate: -0.4deg;
+	border: transparent;
+	border-bottom: 2px solid #dde0e5;
+	border-left: 2px solid #dde0e5;
+	border-bottom-left-radius: 10px;
+}
 /* Components : Score */
 .score-container {
 	padding: 10px;
@@ -87,21 +105,20 @@ body {
 	color: var(--primary-color);
 	font-weight: 500;
 }
-.commentLine{
-	--left-width : 15px;
+.commentLine {
+	--left-width: 15px;
 	margin: 0.5rem 0;
 	margin-left: calc(var(--left-width) * 2);
 	position: relative;
 }
-.commentLine::after{
+.commentLine::after {
 	content: '';
 	position: absolute;
 	width: 2px;
 	height: 100%;
-	background-color: var(--grayish-blue);
-	left:-20px;
+	background-color: #dde0e5;
+	left: -20px;
 	top: -10px;
-	opacity: .1;
 	border-radius: 5px;
 }
 /* Components : Avatar */
@@ -139,7 +156,6 @@ body {
 	gap: 10px;
 	text-transform: uppercase;
 }
-
 
 .btn__text {
 	color: var(--color);

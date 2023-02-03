@@ -10,9 +10,10 @@ import TimeStamp from './TimeStamp';
 interface Props {
 	comment: Comment;
 	setComments: Function;
+	isChild?: boolean;
 }
 
-const CommentCards: React.FC<Props> = ({ comment, setComments }) => {
+const CommentCards: React.FC<Props> = ({ comment, setComments, isChild = false }) => {
 	const [showReplyEditor, setShowReplyEditor] = React.useState<boolean>(false);
 	const [loading, setLoading] = useState<boolean>(false);
 
@@ -34,7 +35,7 @@ const CommentCards: React.FC<Props> = ({ comment, setComments }) => {
 
 		replyComments(newComments)
 			.then(res => {
-				setComments((prevState:Comment[]) => [...prevState, res]);
+				setComments((prevState: Comment[]) => [...prevState, res]);
 				setLoading(false);
 				resetValue();
 			})
@@ -43,7 +44,7 @@ const CommentCards: React.FC<Props> = ({ comment, setComments }) => {
 
 	return (
 		<>
-			<article className='comments-card'>
+			<article className={`comments-card ${isChild ? 'commentChild' : ''}`}>
 				<div className='comments-card__aside'>
 					<Score initialScore={comment.score}></Score>
 				</div>
@@ -73,7 +74,7 @@ const CommentCards: React.FC<Props> = ({ comment, setComments }) => {
 			<div className='commentLine'>
 				{comment?.children != null &&
 					comment.children.map(child => {
-						return <CommentCards key={child.id} comment={child} setComments={setComments} />;
+						return <CommentCards key={child.id} comment={child} setComments={setComments} isChild />;
 					})}
 			</div>
 			{showReplyEditor && <AddCommentEditor handleSubmit={handleReply} textButton='reply' loading={loading} />}
