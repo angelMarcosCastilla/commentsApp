@@ -3,6 +3,7 @@ import useGetComments from '../hooks/useGetComments';
 import { addComment } from '../services/comments';
 import { Comment, CommentsWithChildren } from '../types/comments';
 import { getParentsCommentUtil } from '../utils/commetsUtils';
+import { SnackbarUtilities } from '../utils/Snackbar';
 import CommentCards from './CommentCards';
 import { AddCommentEditor } from './Editor/AddCommentEditor';
 
@@ -33,6 +34,7 @@ export default function ContainerComments(): JSX.Element {
 		addComment(newComments)
 			.then(res => {
 				setComments([...comments, res]);
+				SnackbarUtilities.success('Comment added');
 				setLoading(false);
 				resetValue();
 			})

@@ -246,3 +246,12 @@ body {
 	justify-content: space-between;
 	gap: 1rem;
 }
+
+/*Components Toast*/
+.toastContainer {
+	--colorToast: #fff;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+	padding:  1rem 2rem;
+	border-radius: 5px;
+	border-left: 6px solid  var(--colorToast);
+}
